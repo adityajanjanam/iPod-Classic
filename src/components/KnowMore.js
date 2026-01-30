@@ -20,7 +20,7 @@ class KnowMore extends React.Component {
         const {divOpen} = this.state;
         let cssProp;
         if(divOpen===false){
-            cssProp ={top:"-542px"};
+            cssProp ={top:"-700px"};
         }
         else{
             cssProp ={top:"0px"};
@@ -28,22 +28,62 @@ class KnowMore extends React.Component {
         return (
             <div style={cssProp} className="information-container">
                 <div className="info-div">
-                    <h3>Controls</h3>
-                    <p>1. To unlock screen you have to press center button and to lock screen you have to press menu button in main menu.</p>
-                    <p>2. To play and pause music in any menu you need to press play/pause button on bottom. </p>
-                    <p>3. Short pressing on forward/reverse will take you to next/previous track (ONLY WHILE PLAYING) </p>
-                    <p>4. Long pressing on forward/reverse will seek the song in forward/reverse (ONLY WHILE PLAYING)</p>
-                    <p>5. To navigate between a menu items you need to rotate on track wheel</p>
-                    <p>6. To go to next menu or go inside a menu press center button and to go to previous menu press menu button</p>
-                    <p>7. Songs do play, Please checkout settings menu</p>
-                    <p>Github-Link : <a href="https://github.com/RitishKhanna/iPod-Classic">iPod</a> 
-                    </p>
-                    <p>Hosting-Link : <a href="http://RitishKhanna.github.io/iPod-Classic">iPod-Hosted</a> 
-                    </p>
-                    <p>App Developed by : <a href="https://github.com/RitishKhanna">Ritish Khanna</a></p>
-                    <p>credits : Apple, Flaticon</p>
+                    <div className="info-header">
+                        <h2>📖 Controls & Info</h2>
+                        <button className="close-btn" onClick={this.openDiv}>✕</button>
+                    </div>
+                    <div className="info-content">
+                        <section className="info-section">
+                            <h3>🎮 Controls & Navigation</h3>
+                            <h4>Touch & Wheel:</h4>
+                            <ul>
+                                <li>Tap on menu items to select</li>
+                                <li>Rotate track wheel to navigate</li>
+                                <li>Click center button to enter menu</li>
+                                <li>Click menu button to go back</li>
+                            </ul>
+                            <h4>Keyboard:</h4>
+                            <ul>
+                                <li>Arrow Up/Down: Navigate menu items</li>
+                                <li>Enter: Select/Open menu</li>
+                                <li>Escape: Go back to previous menu</li>
+                                <li>Space: Play/Pause music</li>
+                            </ul>
+                            <h4>Music Playback:</h4>
+                            <ul>
+                                <li>Click play/pause to control music</li>
+                                <li>Click forward/reverse to skip tracks (while playing)</li>
+                                <li>Access Settings for theme, wheel color & wallpaper</li>
+                            </ul>
+                        </section>
+                        <section className="info-section">
+                            <h3>✨ Features</h3>
+                            <ul>
+                                <li>Modern iPod Classic design with smooth animations</li>
+                                <li>Full music player with play/pause and skip controls</li>
+                                <li>Now Playing menu with track information</li>
+                                <li>Music library browser with song selection</li>
+                                <li>Interactive games (Snake, Brick Breaker, Memory, Flappy Bird)</li>
+                                <li>Customizable themes and wheel colors</li>
+                                <li>Wallpaper selector</li>
+                                <li>Keyboard and touch navigation support</li>
+                                <li>Responsive design for mobile devices</li>
+                            </ul>
+                        </section>
+                        <section className="info-section">
+                            <h3>🔗 Links</h3>
+                            <p><a href="https://adityajanjanam.com" target="_blank" rel="noopener noreferrer">Website</a></p>
+                            <p><a href="https://github.com/adityajanjanam" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                            <p><a href="https://linkedin.com/in/janjanamaditya" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                        </section>
+                        <section className="info-section">
+                            <h3>👤 Developer</h3>
+                            <p><a href="https://adityajanjanam.com" target="_blank" rel="noopener noreferrer">Aditya Janjanam</a></p>
+                            <p><strong>Credits:</strong> Apple, Flaticon</p>
+                        </section>
+                    </div>
                 </div>
-                <button id="info-btn" onClick={this.openDiv}>Know More</button>
+                <button id="info-btn" onClick={this.openDiv}>📖 Know More</button>
             </div>
         )
     }

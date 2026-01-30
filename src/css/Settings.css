@@ -2,10 +2,13 @@
 .settings{
     width: 270px;
     height: 200px;
-    background-color: #E3F2FD;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 /* list element */
 li{
     padding-left: 5px;
+    transition: all 0.3s ease;
 }

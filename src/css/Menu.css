@@ -5,24 +5,34 @@
 
 /* Menu options */
 .menu{
-    background-color: #E3F2FD;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
     height: 190px;
     width: 135px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 /* container for Leaf images in menu */
 .leaf{
-    border-left: 1px solid black;
-    background-color: #E3F2FD;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
     height: 190px;
     width: 135px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 /* Heading of menu */
 h3{
     text-align: center;
-    margin: 0px;
-    padding: 0px;
+    margin: 8px 0px;
+    padding: 5px 5px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 13px;
+    font-weight: 600;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 /* List for menu items */
@@ -34,27 +44,83 @@ ul{
 
 /* list item */
 li{
-    padding: 10px 0px;
+    padding: 10px 8px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    transition: all 0.2s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.3;
+}
+
+li:hover:not(.active) {
+    background: rgba(102, 126, 234, 0.1);
+    padding-left: 3px;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 /* Active list item */
 .active{
     padding-left: 5px;
     position: relative;
-    background-color: rgb(55, 150, 220);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
+    font-weight: 600;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Arrow sign after list item */
 .active::after{
     position: absolute;
-    content: ">";
-    right: 2px;
+    content: "›";
+    right: 8px;
+    font-size: 16px;
 }
 
 /* Leaf image */
 .leaf-img{
-    border: 2px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     height: 188px;
     width: 135px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInScale 0.6s ease-out;
+}
+
+.leaf-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-title {
+    animation: slideIn 0.5s ease-out;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 8px 0;
+    text-align: center;
+    letter-spacing: 0.5px;
 }

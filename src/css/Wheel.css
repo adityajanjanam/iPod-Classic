@@ -14,15 +14,58 @@
     position: relative;
     width: 200px;
     height: 200px;
-    background-color: white;   
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0.1));
     border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 -2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: wheelSpinIn 0.8s ease-out;
+}
+
+.wheel:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.2), inset 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.wheel:active {
+    transform: scale(0.99);
+}
+
+@keyframes wheelSpinIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
 }
 
 /* all controls */
 .controll{
-    color: rgb(210, 210, 210);
+    color: rgba(210, 210, 210, 0.8);
     font-weight: 900;
     position: absolute;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.controll:hover {
+    color: rgba(100, 100, 100, 1);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.15);
+    filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.3));
+}
+
+.controll:active {
+    transform: scale(0.95);
 }
 
 /* menu button */
@@ -30,23 +73,23 @@
     left: 38%;
     top: 11%;
     font-weight: 900;
-    font-size: 18px;
+    font-size: 14px;
     width: 40px;
-    height: 20px;
+    height: 24px;
 }
 
 /* reverse button */
 #reverse{
     left: 10%;
     top: 45%;
-    font-size: 23px;
+    font-size: 20px;
 }
 
 /* forward button */
 #forward{
     right: 10%;
     top: 45%;
-    font-size: 23px;
+    font-size: 20px;
 }
 
 /* play-pause button */
@@ -54,7 +97,8 @@
     bottom: 11%;
     left: 44%;
     width: 40px;
-    height: 20px;
+    height: 24px;
+    font-size: 14px;
 }
 
 /* center button */
@@ -62,8 +106,33 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color:  rgb(210, 210, 210);
+    background: radial-gradient(circle at 30% 30%, rgba(240, 240, 240, 0.95), rgba(210, 210, 210, 0.9));
     position: absolute;
     left: 31%;
     top: 30%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), inset 0 -2px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    animation: blankButtonPulse 0.6s ease-out;
+}
+
+.blank:hover {
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.25), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08);
+}
+
+.blank:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes blankButtonPulse {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

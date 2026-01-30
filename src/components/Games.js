@@ -1,7 +1,8 @@
 import React from 'react';
+import "../css/Music.css"
 
-// Renders songs menu
-class Songs extends React.Component {
+// Renders games menu
+class Games extends React.Component {
     handleClick = (index) => {
         const { updateActiveMenu, changeMenuForward, currentMenu, active } = this.props;
         if (index !== active) {
@@ -13,12 +14,13 @@ class Songs extends React.Component {
     }
 
     render() {
-        const {songItems,active} = this.props;
+        const {active} = this.props;
+        const games = ["Snake", "Brick Breaker", "Memory Game", "Flappy Bird"];
         return (
             <div className="music">
-                <h2>Songs</h2>
+                <h2>Games</h2>
                 <ul>
-                {songItems.map((element, index)=>{
+                {games.map((element, index)=>{
                             return <li 
                                 key={index} 
                                 className={active===index ? "active" : ""}
@@ -37,4 +39,4 @@ class Songs extends React.Component {
 }
 
 
-export default Songs;
+export default Games;

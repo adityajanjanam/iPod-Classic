@@ -1,4 +1,11 @@
 /* list element in themes */
 .theme-li{
     padding: 2px 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.theme-li:hover:not(.active) {
+    background: linear-gradient(90deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+    padding-left: 8px;
 }

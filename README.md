@@ -1,37 +1,81 @@
-# iPod-Classic
-## View this app at: https://RitishKhanna.github.io/iPod-Classic/
+# 🎵 iPod-Classic
+## View this app at: https://adityajanjanam.com/
 
-## Basic Features.
+## ✨ Features
 
-1. Looks like an amazing classic device we all used to adore.
-2. Fully working functionalty for listening to music, all controls work : play/pause, forward, reverse, next, previous.
-3. Fully working settings menu(change theme, change wheel color, change wallpaper).
-4. Amazing looking lock screen.
-5. Now playing Menu.
-6. All design credits to apple, afterall immitation is the sincerest form of flattery. Also motivated by an app named retroPod from appstore by James'o Brian.
-7. Songs and images only for personal use, a big credit to font-awesome and flat-icons.
-8. Please contact me for any concerns. 
+### Core Functionality
+- **Classic iPod Design**: Authentic replica of the iconic iPod Classic with modern enhancements
+- **Music Player**: Full-featured music player with play/pause, skip forward/reverse controls
+- **Track Management**: Browse songs and select tracks from your music library
+- **Now Playing**: Display current track information with album artwork
 
-## How to Use/Control?
+### Interactive Features
+- **Games Menu**: Includes Snake, Brick Breaker, Memory Game, and Flappy Bird
+- **Customization**: 
+  - Multiple themes with smooth color transitions
+  - Adjustable wheel colors for personalization
+  - Selectable wallpapers
+- **Responsive Controls**: 
+  - Touch/click navigation on all buttons and menus
+  - Keyboard support (Arrow keys, Enter, Escape, Space)
+  - Smooth wheel interactions with rotation detection
 
-1. To unlock screen you have to press center button and to lock screen you have to press menu button in main menu.
-2. To play and pause music in any menu you need to press play/pause button on bottom. 
-3. Short pressing on forward/reverse will take you to next/previous track (ONLY WHILE PLAYING) 
-4. Long pressing on forward/reverse will seek the song in forward/reverse (ONLY WHILE PLAYING)
-5. To navigate between a menu items you need to rotate on track wheel
-6. To go to next menu or go inside a menu press center button and to go to previous menu press menu button
-7. Songs do play and Please checkout settings menu
+### Modern Enhancements
+- **Smooth Animations**: Entrance transitions, hover effects, active states
+- **Accessibility**: Full keyboard navigation, ARIA labels, semantic HTML
+- **Cross-Browser Support**: Works on modern browsers including Safari/iOS with vendor prefixes
+- **Mobile Friendly**: Responsive design optimized for different screen sizes
 
-# Preview 
+### Design Credits
+- Design inspired by Apple's iconic iPod Classic
+- Motivated by retroPod app by James O'Brien
+- Icons and images from Flaticon and Font Awesome
+- Songs for demonstration purposes only 
 
-### Lock Screen and Main Menu
-<img src="/assets/lock.png" width="380px" height="550px"> <img src="/assets/menu.png" width="390px" height="550px"></img>
+## 👤 Author
+- **Aditya Janjanam**
+- Website: https://adityajanjanam.com
+- GitHub: https://github.com/adityajanjanam
+- LinkedIn: https://linkedin.com/in/janjanamaditya
 
-### Now Playing and Themes
-<img src="/assets/playing.png" width="400px" height="550px"></img> <img src="/assets/theme.png" width="390px" height="550px"></img>
+## 🎮 How to Use/Controls
 
-### Different theme and wallpaper applied
-<img src="/assets/themewall.png" width="360px" height="550px"></img>
+### Touch & Mouse
+- **Tap Menu Items**: Click on any menu item to select it
+- **Rotate Wheel**: Drag or rotate the track wheel to navigate
+- **Center Button**: Click to enter a menu or confirm selection
+- **Menu Button**: Click to go back to previous menu
+- **Play/Pause**: Control music playback from any menu
+
+### Keyboard
+| Key | Action |
+|-----|--------|
+| ↑ Arrow Up | Navigate up in menu |
+| ↓ Arrow Down | Navigate down in menu |
+| Enter | Select/Enter menu |
+| Escape | Go back to previous menu |
+| Space | Play/Pause music |
+
+### Music Controls
+- Play/Pause button controls playback in any menu
+- Forward/Reverse buttons skip tracks
+- Access Settings menu to customize themes and appearance
+- Browse Music library to select songs
+- Check Now Playing for current track info
+
+### Games
+- Explore the Games menu for fun interactive games
+- Use arrow keys or wheel to navigate
+- Enter to select and play
+
+## 📱 Preview
+
+The iPod Classic app features a modern, interactive interface with:
+- Sleek hardware-accurate design
+- Smooth animations and transitions
+- Touch-friendly controls
+- Responsive layout
+- Beautiful themes and customization options
 
 ## How To Install.
 

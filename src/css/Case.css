@@ -3,12 +3,34 @@
     height: 500px;
     width: 300px;
     border-radius: 40px;
-    background-color: rgb(210, 210, 210);
+    background: linear-gradient(135deg, rgba(240, 240, 240, 0.95), rgba(220, 220, 220, 0.95));
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: inset 0 0 20px 3px black;
-    -webkit-box-reflect: below 8px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent) , to(rgba(250, 250, 250, 0.1)));
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), inset 0 0 30px rgba(255, 255, 255, 0.3);
+    -webkit-box-reflect: below 8px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent) , to(rgba(250, 250, 250, 0.15)));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    animation: caseEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+.case:hover {
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+@keyframes caseEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
 
 

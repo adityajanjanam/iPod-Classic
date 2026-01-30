@@ -5,21 +5,26 @@
     width: 270px;
     height: 20px;
     min-height: 20px;
-    background-color: #E3F2FD;
-    border-bottom: 1px solid black;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.12));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 /* ipod logo */
 .heading{
-    margin: 1px 5px;
-    padding: 0px;
+    margin: 0px 3px;
+    padding: 0px 2px;
+    font-size: 12px;
+    white-space: nowrap;
 }
 
 /* time */
 .time{
-   margin: 0px;
-   padding: 0px; 
    margin: auto;
+   padding: 0px 5px; 
+   font-size: 11px;
+   white-space: nowrap;
 }
 
 /* battery icon */
@@ -42,14 +47,20 @@
     margin-right: 8px;
     padding: 0px;
     text-align: center;
-    color: #039BE5;
+    color: #667eea;
+    transition: color 0.3s ease;
+}
+
+.play-pause-nav:hover {
+    color: #764ba2;
 }
 
 /* notification */
 .notification{
-    color: #039BE5;
+    color: #667eea;
     margin: 1px;
     margin:auto;
     padding: 0px;
     text-align: center;
+    font-weight: 500;
 }

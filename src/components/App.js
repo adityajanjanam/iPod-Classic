@@ -38,9 +38,9 @@ class App extends React.Component {
       wallpaperItems: [AudioTapes, BlueCubes, BlueJelly], //wallpapers
       songItems: ["Besomorph  Silent Child  IDGAF", "Billie Eilish  Six Feet Under", "Confetti  Ghost","DHARIA  Sugar  Brownies","Jony Love Your Voice"], //song names
       songIndex: 0, //current song
-      lengthMenuKey: { "-1": 3, 1: 2, 4: 4, 8: 4, 3: 2, 9: 3 ,10:2},  //length of a particular menu
-      menuMapping: { "-1": [0, 1, 2, 3], 1: [4, 5, 6], 3: [8, 9, 10] }, //which menu can be rendered by key menu
-      currentMenu: -2, //current menu which is lockscreen initially
+      lengthMenuKey: { "-1": 3, 1: 2, 2: 3, 4: 4, 8: 4, 3: 2, 9: 3 ,10:2},  //length of a particular menu
+      menuMapping: { "-1": [0, 1, 2, 3], 1: [4, 5, 6], 2: [11, 12, 13], 3: [8, 9, 10] }, //which menu can be rendered by key menu
+      currentMenu: -1, //current menu which is main menu initially (lock screen removed)
       navigationStack: [], //Used for navigation forward and backward
       songUrl: song1, //current song url
       playing: false, //playing or not
@@ -133,7 +133,7 @@ class App extends React.Component {
   // FUNCTION FOR : UPDATE ACTIVE MENU WHILE ROTATING ON THE TRACK-WHEEL
   updateActiveMenu = (direction, menu) => {
 
-    if (menu !== -1 && menu !== 1 && menu !== 4 && menu !== 8 && menu !== 3 && menu !== 9 && menu !== 10) {
+    if (menu !== -1 && menu !== 1 && menu !== 2 && menu !== 4 && menu !== 8 && menu !== 3 && menu !== 9 && menu !== 10) {
       return;
     }
     let min = 0;
@@ -159,40 +159,17 @@ class App extends React.Component {
 
   // FUNCTION FOR : CHANGE THE THEME OF iPod BODY
   setTheme = (id) => {
-    let theme ="";
-    if (id === 0) {
-      theme= "#FDDCD7";
-    }
-    else if (id === 1) {
-      theme= "rgb(210, 210, 210)"
-    } else if (id === 2) {
-      theme= "#F5DDC5";
-    } else if (id === 3) {
-      theme="#D1CDDA";
-      
-    } else if (id === 4) {
-      theme="black"
-    }
-    this.setState({ theme:theme , noty:true, notifyText:"Theme Changed"})
-    return;
+    const themes = ["#F7D8D2", "#E2E2E2", "#F5E0B8", "#D7D3F5", "#1F1F1F"];
+    const theme = themes[id] || themes[1];
+    this.setState({ theme, noty: true, notifyText: "Theme Changed" });
   }
 
 
   // FUNCTION FOR : CHANGE COLOR OF WHEEL
   setWheelColor = (id) => {
-    let wheelColor ="";
-    if (id === 0) {
-      wheelColor= "#212121";
-    }
-    else if (id === 1) {
-      wheelColor= "white";
-    } else if (id === 2) {
-      wheelColor = "#3E2723";
-    } else if (id === 3) {
-      wheelColor= "#3D5AFE";
-    }
-    this.setState({ wheelColor: wheelColor, noty:true, notifyText:"Wheel Color Changed"})
-    return;
+    const wheelColors = ["#1E1E1E", "#F7F7F7", "#5C4033", "#4F6BFF"];
+    const wheelColor = wheelColors[id] || wheelColors[1];
+    this.setState({ wheelColor, noty: true, notifyText: "Wheel Color Changed" });
   }
 
   // FUNCTION FOR : SET WALLPAPER OF iPod Body

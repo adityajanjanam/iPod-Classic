@@ -3,6 +3,16 @@ import "../css/Themes.css"
 
 // Renders themes menu
 class Themes extends React.Component {
+    handleClick = (index) => {
+        const { updateActiveMenu, changeMenuForward, currentMenu, active } = this.props;
+        if (index !== active) {
+            const direction = index > active ? 1 : -1;
+            updateActiveMenu(direction, currentMenu);
+        } else {
+            changeMenuForward(index, currentMenu);
+        }
+    }
+
     render() {
         const {active} = this.props;
         return (
@@ -10,7 +20,14 @@ class Themes extends React.Component {
                 <h2>Theme Select</h2>
                 <ul>
                     {["Rose Gold","Space Gray","Gold","Light Purple","Black"].map((element,index)=>{
-                        return active===index?<li key={index} className="active theme-li">{element}</li>:<li className="theme-li" key={index}>{element} </li>
+                        return <li 
+                            key={index} 
+                            className={active===index ? "active theme-li" : "theme-li"}
+                            onClick={() => this.handleClick(index)}
+                            style={{cursor: 'pointer'}}
+                        >
+                            {element}
+                        </li>
                     })}
                 </ul>
             </div>

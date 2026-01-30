@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate iPod Icons</title>
+</head>
+<body>
+    <canvas id="canvas192" width="192" height="192"></canvas>
+    <canvas id="canvas512" width="512" height="512"></canvas>
+    <canvas id="canvasFavicon" width="32" height="32"></canvas>
+    <script>
+        function createiPodIcon(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#667eea';
+            ctx.fillRect(0, 0, size, size);
+            
+            // iPod body shape
+            const bodyWidth = size * 0.6;
+            const bodyHeight = size * 0.8;
+            const x = (size - bodyWidth) / 2;
+            const y = (size - bodyHeight) / 2;
+            const radius = size * 0.08;
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.roundRect(x, y, bodyWidth, bodyHeight, radius);
+            ctx.fill();
+            
+            // Screen
+            const screenWidth = bodyWidth * 0.85;
+            const screenHeight = bodyHeight * 0.4;
+            const screenX = x + (bodyWidth - screenWidth) / 2;
+            const screenY = y + bodyHeight * 0.1;
+            
+            ctx.fillStyle = '#1a1a1a';
+            ctx.beginPath();
+            ctx.roundRect(screenX, screenY, screenWidth, screenHeight, radius * 0.5);
+            ctx.fill();
+            
+            // Wheel
+            const wheelRadius = bodyWidth * 0.35;
+            const wheelX = size / 2;
+            const wheelY = y + bodyHeight * 0.7;
+            
+            ctx.fillStyle = '#e0e0e0';
+            ctx.beginPath();
+            ctx.arc(wheelX, wheelY, wheelRadius, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Center button
+            const centerRadius = wheelRadius * 0.4;
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(wheelX, wheelY, centerRadius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        createiPodIcon(document.getElementById('canvas192'), 192);
+        createiPodIcon(document.getElementById('canvas512'), 512);
+        createiPodIcon(document.getElementById('canvasFavicon'), 32);
+        
+        // Download images
+        setTimeout(() => {
+            const link192 = document.createElement('a');
+            link192.download = 'ipod-icon.png';
+            link192.href = document.getElementById('canvas192').toDataURL();
+            link192.click();
+            
+            setTimeout(() => {
+                const link512 = document.createElement('a');
+                link512.download = 'ipod-icon-512.png';
+                link512.href = document.getElementById('canvas512').toDataURL();
+                link512.click();
+                
+                setTimeout(() => {
+                    const linkFavicon = document.createElement('a');
+                    linkFavicon.download = 'favicon.ico';
+                    linkFavicon.href = document.getElementById('canvasFavicon').toDataURL();
+                    linkFavicon.click();
+                }, 500);
+            }, 500);
+        }, 500);
+    </script>
+</body>
+</html>
